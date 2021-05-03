@@ -1,24 +1,5 @@
 // Add your functions here
-// Add your functions here
 
-
-function mapToNegativize(sourceArray) {
-  return sourceArray.map(x => x * -1);
-}
-
-function mapToNoChange(sourceArray) {
-  return sourceArray.map(x => x);
-}
-
-function mapToDouble(sourceArray) {
-  return sourceArray.map(x => x * 2);
-}
-
-function mapToSquare(sourceArray) {
-  return map(sourceArray, function(x){ return x * x })
-}
-
-// Add your functions here
 const map = (arr, fx) => {
     const newArray = [];
     for(let x of arr){
