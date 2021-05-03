@@ -18,17 +18,22 @@ function mapToSquare(sourceArray) {
   return map(sourceArray, function(x){ return x * x })
 }
 
+// Add your functions here
+const map = (arr, fx) => {
+    const newArray = []; 
+    for(let x of arr){
+        newArray.push((fx)(x)) 
+    }
+    return newArray; 
+}
 
-const initialValue = 0;
-
-/* numbers array */
-const numbers = [5, 10, 15];
-
-/* reducer method that takes in the accumulator and next item */
-const reducer = (accumulator, item) => {
-  return accumulator + item;
-};
-
-/* we give the reduce method our reducer function
-  and our initial value */
-const total = numbers.reduce(reducer, initialValue)
+const reduce = (arr, fx, startingValue) => {
+    let value = (!!startingValue) ? startingValue : arr[0]
+    let i = (!!startingValue) ? 0 : 1
+  
+    for (; i < arr.length; i++) {
+      value = fx(arr[i], value)
+    }
+  
+    return value;
+  }
